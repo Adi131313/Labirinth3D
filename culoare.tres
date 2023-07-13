@@ -1,0 +1,10 @@
+[gd_resource type="VisualShader" load_steps=2 format=2]
+
+[sub_resource type="VisualShaderNodeColorConstant" id=1]
+constant = Color( 0.760784, 0.94902, 0.054902, 1 )
+
+[resource]
+graph_offset = Vector2( 138.2, 210 )
+nodes/light/0/position = Vector2( 480, 240 )
+nodes/light/2/node = SubResource( 1 )
+nodes/light/2/position = Vector2( 760, 240 )

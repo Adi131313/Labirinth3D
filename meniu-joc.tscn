@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://meniu-joc.gd" type="Script" id=1]
+[ext_resource path="res://fonturi/fundal1.jpg" type="Texture" id=2]
+[ext_resource path="res://fonturi/Acme-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://texturi/Button-SoundBible.com-1420500901.wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="meniu-joc" type="Control"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+script = ExtResource( 1 )
+
+[node name="fundal1" type="Sprite" parent="."]
+position = Vector2( 970.999, 531.467 )
+scale = Vector2( 0.2, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="iesire-joc" type="Button" parent="."]
+pause_mode = 2
+margin_left = 909.143
+margin_top = 722.147
+margin_right = 1035.14
+margin_bottom = 792.147
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+action_mode = 0
+text = "Menu"
+flat = true
+
+[node name="shop-joc" type="Button" parent="."]
+pause_mode = 2
+margin_left = 912.405
+margin_top = 647.46
+margin_right = 1024.4
+margin_bottom = 717.46
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+action_mode = 0
+text = "Shop"
+flat = true
+
+[node name="resume" type="Button" parent="."]
+pause_mode = 2
+margin_left = 885.394
+margin_top = 453.051
+margin_right = 1056.39
+margin_bottom = 523.051
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+action_mode = 0
+text = "Resume"
+flat = true
+
+[node name="Pause" type="Label" parent="."]
+margin_left = 896.889
+margin_top = 262.083
+margin_right = 1037.89
+margin_bottom = 339.083
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+text = "Pause"
+align = 1
+valign = 1
+
+[node name="sunet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -30.0
+[connection signal="pressed" from="iesire-joc" to="." method="_on_iesirejoc_pressed"]
+[connection signal="pressed" from="shop-joc" to="." method="_on_shopjoc_pressed"]
+[connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]

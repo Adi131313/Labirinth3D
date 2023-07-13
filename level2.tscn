@@ -1,0 +1,1312 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Spatial.gd" type="Script" id=1]
+[ext_resource path="res://texturi/Tiles039_2K_Color.jpg" type="Texture" id=2]
+[ext_resource path="res://texturi/Tiles039_2K_Roughness.jpg" type="Texture" id=3]
+[ext_resource path="res://importuri/perete_piatra.tres" type="ArrayMesh" id=4]
+[ext_resource path="res://biluta.tscn" type="PackedScene" id=5]
+[ext_resource path="res://importuri/gold.tres" type="ArrayMesh" id=6]
+[ext_resource path="res://fonturi/hud_coin.png" type="Texture" id=7]
+[ext_resource path="res://fonturi/Acme-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://importuri/numaratoru.gd" type="Script" id=9]
+[ext_resource path="res://banuti2.gd" type="Script" id=10]
+[ext_resource path="res://importuri/coin.tscn" type="PackedScene" id=11]
+[ext_resource path="res://importuri/buton-animat.tscn" type="PackedScene" id=12]
+[ext_resource path="res://importuri/butonlevel2.gd" type="Script" id=13]
+[ext_resource path="res://texturi/Great_Hope.wav" type="AudioStream" id=14]
+[ext_resource path="res://meniu-joc.tscn" type="PackedScene" id=15]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 10, 1, 10 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 20, 2, 20 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 2 )
+roughness_texture = ExtResource( 3 )
+uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=4]
+
+[sub_resource type="CubeMesh" id=5]
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.415686, 0.792157, 0.894118, 0.109804 )
+metallic = 0.51
+roughness = 0.04
+refraction_enabled = true
+refraction_scale = 0.05
+refraction_texture_channel = 0
+
+[sub_resource type="CylinderShape" id=7]
+radius = 0.490739
+height = 0.184762
+
+[sub_resource type="DynamicFont" id=8]
+size = 90
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="podea" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="podea"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="podea"]
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="perete-exterior" type="StaticBody" parent="."]
+transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.05, -10.8229, 1.792, 9.889 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior2" type="StaticBody" parent="."]
+transform = Transform( -3.49691e-09, 0, -0.05, 0, 0.08, 0, 0.08, 0, -2.18557e-09, -9.87646, 1.79224, 8.33498 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior2"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior2"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior3" type="StaticBody" parent="."]
+transform = Transform( -3.49691e-09, 0, -0.05, 0, 0.08, 0, 0.08, 0, -2.18557e-09, -9.87646, 1.79224, 5.14267 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior3"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior3"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior4" type="StaticBody" parent="."]
+transform = Transform( -3.49691e-09, 0, -0.05, 0, 0.08, 0, 0.08, 0, -2.18557e-09, -9.87646, 1.79224, 1.94581 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior4"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior4"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior5" type="StaticBody" parent="."]
+transform = Transform( -3.49691e-09, 0, -0.05, 0, 0.08, 0, 0.08, 0, -2.18557e-09, -9.87646, 1.79224, -1.25534 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior5"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior5"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior6" type="StaticBody" parent="."]
+transform = Transform( -3.49691e-09, 0, -0.05, 0, 0.08, 0, 0.08, 0, -2.18557e-09, -9.87646, 1.79224, -4.45254 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior6"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior6"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior7" type="StaticBody" parent="."]
+transform = Transform( -3.49691e-09, 0, -0.05, 0, 0.08, 0, 0.08, 0, -2.18557e-09, -9.87646, 1.79224, -7.63415 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior7"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior7"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior8" type="StaticBody" parent="."]
+transform = Transform( -3.49691e-09, 0, -0.05, 0, 0.08, 0, 0.08, 0, -2.18557e-09, -9.87646, 1.79224, -10.8171 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior8"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior8"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior9" type="StaticBody" parent="."]
+transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.05, -8.31819, 1.79224, -9.87267 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior9"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior9"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior10" type="StaticBody" parent="."]
+transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.05, -5.11967, 1.79224, -9.87267 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior10"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior10"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior11" type="StaticBody" parent="."]
+transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.05, -1.92105, 1.79224, -9.87267 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior11"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior11"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior12" type="StaticBody" parent="."]
+transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.05, 1.26258, 1.79224, -9.87267 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior12"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior12"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior13" type="StaticBody" parent="."]
+transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.05, 4.43532, 1.79224, -9.87267 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior13"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior13"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior14" type="StaticBody" parent="."]
+transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.05, 7.63204, 1.79224, -9.87267 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior14"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior14"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior15" type="StaticBody" parent="."]
+transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.05, 10.8188, 1.79224, -9.87267 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior15"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior15"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior16" type="StaticBody" parent="."]
+transform = Transform( -3.49691e-09, 0, -0.05, 0, 0.08, 0, 0.08, 0, -2.18557e-09, 9.87177, 1.79224, -8.29924 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior16"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior16"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior17" type="StaticBody" parent="."]
+transform = Transform( -3.49691e-09, 0, -0.05, 0, 0.08, 0, 0.08, 0, -2.18557e-09, 9.87177, 1.79224, -5.1102 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior17"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior17"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior18" type="StaticBody" parent="."]
+transform = Transform( -3.49691e-09, 0, -0.05, 0, 0.08, 0, 0.08, 0, -2.18557e-09, 9.87177, 1.79224, -1.91308 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior18"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior18"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior19" type="StaticBody" parent="."]
+transform = Transform( -3.49691e-09, 0, -0.05, 0, 0.08, 0, 0.08, 0, -2.18557e-09, 9.87177, 1.79224, 1.25775 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior19"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior19"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior20" type="StaticBody" parent="."]
+transform = Transform( -3.49691e-09, 0, -0.05, 0, 0.08, 0, 0.08, 0, -2.18557e-09, 9.87177, 1.79224, 4.44509 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior20"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior20"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior21" type="StaticBody" parent="."]
+transform = Transform( -3.49691e-09, 0, -0.05, 0, 0.08, 0, 0.08, 0, -2.18557e-09, 9.87177, 1.79224, 7.63847 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior21"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior21"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior22" type="StaticBody" parent="."]
+transform = Transform( -3.49691e-09, 0, -0.05, 0, 0.08, 0, 0.08, 0, -2.18557e-09, 9.87177, 1.79224, 10.833 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior22"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior22"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior23" type="StaticBody" parent="."]
+transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.05, 8.31525, 1.79224, 9.88856 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior23"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior23"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior24" type="StaticBody" parent="."]
+transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.05, 5.13166, 1.79224, 9.88856 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior24"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior24"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior25" type="StaticBody" parent="."]
+transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.05, 1.93272, 1.79224, 9.88856 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior25"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior25"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior26" type="StaticBody" parent="."]
+transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.05, -1.25004, 1.79224, 9.88856 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior26"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior26"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior27" type="StaticBody" parent="."]
+transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.05, -4.44557, 1.79224, 9.88856 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior27"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior27"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-exterior28" type="StaticBody" parent="."]
+transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.05, -7.62976, 1.79224, 9.88856 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-exterior28"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-exterior28"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, -7.86762, 1.48872, 8.61956 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior3" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, -7.89654, 1.48872, 4.61936 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior3"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior3"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior7" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, -3.92625, 1.48872, 4.62906 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior7"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior7"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior16" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, 0.0761404, 1.48872, 4.63478 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior16"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior16"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior46" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, -0.03, 0, 0.05, 0, 0.05, 0, -1.31134e-09, 0.00660864, 1.48872, -4.78407 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior46"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior46"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior47" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, -0.03, 0, 0.05, 0, 0.05, 0, -1.31134e-09, 0.00660864, 1.48872, -2.78972 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior47"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior47"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior35" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, -0.03, 0, 0.05, 0, 0.05, 0, -1.31134e-09, 6.01099, 1.48872, 5.13501 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior35"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior35"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior58" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, -0.03, 0, 0.05, 0, 0.05, 0, -1.31134e-09, 6.01099, 1.48872, 3.13676 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior58"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior58"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior50" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, -0.03, 0, 0.05, 0, 0.05, 0, -1.31134e-09, 5.98737, 1.48872, -4.72487 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior50"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior50"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior57" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, -0.03, 0, 0.05, 0, 0.05, 0, -1.31134e-09, 5.98737, 1.48872, -2.73987 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior57"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior57"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior37" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, 7.97547, 1.48872, 4.63505 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior37"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior37"]
+transform = Transform( 1, 0, 5.32907e-15, 0, 1, 0, -2.13163e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior55" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, -0.03, 0, 0.05, 0, 0.05, 0, -1.31134e-09, 7.88904, 1.48872, -6.67643 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior55"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior55"]
+transform = Transform( 1, 0, 5.32907e-15, 0, 1, 0, -2.13163e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior67" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, -0.03, 0, 0.05, 0, 0.05, 0, -1.31134e-09, 7.94887, 1.48872, -0.777295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior67"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior67"]
+transform = Transform( 1, 0, 5.32907e-15, 0, 1, 0, -2.13163e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior33" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, 2.0574, 1.48872, 4.64375 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior33"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior33"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior19" type="StaticBody" parent="."]
+transform = Transform( -0.05, 0, -2.62268e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.03, -3.19444, 1.48872, -0.0986355 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior19"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior19"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior66" type="StaticBody" parent="."]
+transform = Transform( -0.05, 0, -2.62268e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.03, 4.7443, 1.48872, -0.0986355 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior66"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior66"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior20" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, 0.076, 1.489, 0.65 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior20"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior20"]
+transform = Transform( 20.6547, 0, 1.01905e-06, 0, 10.0051, 0, 2.83068e-06, 0, 1.22716, -5.09428, 0, 0 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="perete-interior22" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, 2.12943, 1.489, 0.65 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior22"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior22"]
+transform = Transform( 20.6547, 0, 1.01905e-06, 0, 10.0051, 0, 2.83068e-06, 0, 1.22716, -5.09428, 0, 0 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="perete-interior21" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, 1.38673, 1.489, -0.0909047 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior21"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior21"]
+transform = Transform( 20.6547, 0, 1.01905e-06, 0, 10.0051, 0, 2.83068e-06, 0, 1.22716, -5.09428, 0, 0 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="perete-interior23" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, 1.38673, 1.489, 1.89931 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior23"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior23"]
+transform = Transform( 20.6547, 0, 1.01905e-06, 0, 10.0051, 0, 2.83068e-06, 0, 1.22716, -5.09428, 0, 0 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="perete-interior14" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, -5.90936, 1.48872, 0.647299 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior14"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior14"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior24" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, -5.90936, 1.48872, -1.35189 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior24"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior24"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior39" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, -0.03, 0, 0.05, 0, 0.05, 0, -1.31134e-09, -5.89456, 1.48872, -6.65794 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior39"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior39"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior15" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, -3.92625, 1.48872, -1.34231 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior15"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior15"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior44" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, -3.92625, 1.48872, -9.12114 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior44"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior44"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior56" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, 4.01519, 1.48872, -9.11935 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior56"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior56"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior60" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, 4.00806, 1.48872, -1.32581 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior60"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior60"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior62" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, 4.00806, 1.48872, 8.62529 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior62"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior62"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior13" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, -1.90726, 1.48872, 6.59717 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior13"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior13"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior18" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, -0.03, 0, 0.05, 0, 0.05, 0, -1.31134e-09, -1.95864, 1.48872, -0.823843 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior18"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior18"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior45" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, -1.93442, 1.48872, -7.17898 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior45"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior45"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior51" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, -0.03, 0, 0.05, 0, 0.05, 0, -1.31134e-09, 2.0334, 1.48872, -6.67933 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior51"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior51"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior4" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, -7.88989, 1.48872, 2.62138 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior4"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior4"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior26" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, -7.88594, 1.48872, -3.32253 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior26"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior26"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior38" type="StaticBody" parent="."]
+transform = Transform( -2.18557e-09, 0, 0.03, 0, 0.05, 0, -0.05, 0, -1.31134e-09, -7.88594, 1.48872, -5.31879 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior38"]
+transform = Transform( 20.7217, 0, 7.10543e-15, 0, 10.0135, 0, -9.09495e-13, 0, 1.28141, -5.03348, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior38"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -1.42109e-14, 0, 1, -5.09428, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior2" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, -8.87707, 1.48872, 5.87169 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior2"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior2"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior8" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, -4.90581, 1.48872, 5.87169 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior8"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior8"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior11" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, -2.90479, 1.48872, 5.87169 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior11"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior11"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior12" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, -0.913889, 1.48872, 5.87169 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior12"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior12"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior36" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, 6.99239, 1.48872, 5.87151 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior36"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior36"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior61" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, 4.99746, 1.48872, 5.87151 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior61"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior61"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior5" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, -6.90185, 1.48872, 3.8644 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior5"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior5"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior30" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, 3.03752, 1.48872, 3.90967 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior30"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior30"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior34" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, 5.03002, 1.48872, 3.90967 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior34"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior34"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior6" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, -6.87826, 1.48872, 7.88283 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior6"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior6"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior17" type="StaticBody" parent="."]
+transform = Transform( -0.05, 0, -2.62268e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.03, -0.925206, 1.48872, 7.82304 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior17"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior17"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior32" type="StaticBody" parent="."]
+transform = Transform( -0.05, 0, -2.62268e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.03, 1.06679, 1.48872, 7.82304 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior32"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior32"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior63" type="StaticBody" parent="."]
+transform = Transform( -0.05, 0, -2.62268e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.03, 8.86688, 1.48872, 7.82304 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior63"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior63"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior64" type="StaticBody" parent="."]
+transform = Transform( -0.05, 0, -2.62268e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.03, 6.87202, 1.48872, 7.82304 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior64"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior64"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior9" type="StaticBody" parent="."]
+transform = Transform( -0.05, 0, -2.62268e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.03, -6.89671, 1.48872, -2.08126 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior9"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior9"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior28" type="StaticBody" parent="."]
+transform = Transform( -0.05, 0, -2.62268e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.03, -0.971311, 1.48872, -2.0561 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior28"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior28"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior31" type="StaticBody" parent="."]
+transform = Transform( -0.05, 0, -2.62268e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.03, 3.02687, 1.48872, -2.0561 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior31"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior31"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior59" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, 6.96228, 1.48872, -2.00654 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior59"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior59"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior27" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, -6.90176, 1.48872, -4.05788 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior27"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior27"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior40" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, -8.87919, 1.48872, -7.88638 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior40"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior40"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior41" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, -6.88002, 1.48872, -7.88638 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior41"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior41"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior48" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, -0.949687, 1.48872, -7.91313 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior48"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior48"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior29" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, -2.92666, 1.48872, -4.05788 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior29"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior29"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior49" type="StaticBody" parent="."]
+transform = Transform( -0.05, 0, -2.62268e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.03, 0.987267, 1.48872, -4.05788 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior49"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior49"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior68" type="StaticBody" parent="."]
+transform = Transform( -0.05, 0, -2.62268e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.03, 8.88834, 1.48872, -4.05788 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior68"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior68"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior25" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, -6.90508, 1.48872, 1.87973 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior25"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior25"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior10" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, -4.91892, 1.48872, 1.87973 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior10"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior10"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior65" type="StaticBody" parent="."]
+transform = Transform( -0.05, 0, -2.62268e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.03, 6.99525, 1.48872, 1.90213 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior65"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior65"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior42" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, -4.91346, 1.48872, -5.93197 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior42"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior42"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior43" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, -2.91818, 1.48872, -5.93197 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior43"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior43"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior52" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, 3.01359, 1.48872, -5.94603 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior52"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior52"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior53" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, 5.00387, 1.48872, -5.94603 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior53"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior53"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="perete-interior54" type="StaticBody" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.03, 8.87601, 1.48872, -5.94603 )
+
+[node name="CollisionShape" type="CollisionShape" parent="perete-interior54"]
+transform = Transform( 20.7217, 0, 0, 0, 10.0135, 0, 0, 0, 1.28141, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="perete-interior54"]
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="MINGEA" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 8.80807, 1.20707, 8.78973 )
+
+[node name="statuie" type="StaticBody" parent="."]
+transform = Transform( 1.2253, -0.52075, -0.372132, 0, 0.430091, -1.35418, 0.865239, 0.737456, 0.526991, 1.09965, 1.62116, 0.94456 )
+
+[node name="CollisionShape" type="CollisionShape" parent="statuie"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="statuie"]
+transform = Transform( 0.5, 0, 0, 0, 0.077, 0, 0, -1.86265e-09, 0.5, 0.0585456, 0.00537062, -0.00397062 )
+mesh = ExtResource( 6 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="hud_coin" type="Sprite" parent="Control"]
+position = Vector2( 1637, 115 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 7 )
+
+[node name="numaratoru" type="Label" parent="Control"]
+margin_left = 1765.52
+margin_top = 57.4154
+margin_right = 1846.52
+margin_bottom = 172.415
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Q"
+align = 1
+valign = 1
+script = ExtResource( 9 )
+
+[node name="numaratoru2" type="Label" parent="Control"]
+margin_left = 1701.52
+margin_top = 50.4154
+margin_right = 1782.52
+margin_bottom = 165.415
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "x"
+align = 1
+valign = 1
+
+[node name="banuti" type="Spatial" parent="."]
+script = ExtResource( 10 )
+
+[node name="holder" type="Spatial" parent="banuti"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -8, 1.2, 7 )
+
+[node name="coin" parent="banuti/holder" instance=ExtResource( 11 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+
+[node name="holder2" type="Spatial" parent="banuti"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -8.95944, 1.2, 3.95119 )
+
+[node name="coin" parent="banuti/holder2" instance=ExtResource( 11 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+
+[node name="holder3" type="Spatial" parent="banuti"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.847101, 1.2, 6.7007 )
+
+[node name="coin" parent="banuti/holder3" instance=ExtResource( 11 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+
+[node name="holder4" type="Spatial" parent="banuti"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.84776, 1.2, 4.868 )
+
+[node name="coin" parent="banuti/holder4" instance=ExtResource( 11 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+
+[node name="holder5" type="Spatial" parent="banuti"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 9.1604, 1.2, -5.03525 )
+
+[node name="coin" parent="banuti/holder5" instance=ExtResource( 11 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+
+[node name="holder6" type="Spatial" parent="banuti"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 8.95746, 1.2, -7.07769 )
+
+[node name="coin" parent="banuti/holder6" instance=ExtResource( 11 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+
+[node name="holder7" type="Spatial" parent="banuti"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -5.05378, 1.2, -7.07769 )
+
+[node name="coin" parent="banuti/holder7" instance=ExtResource( 11 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+
+[node name="holder8" type="Spatial" parent="banuti"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -5.05378, 1.2, -4.05988 )
+
+[node name="coin" parent="banuti/holder8" instance=ExtResource( 11 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+
+[node name="holder9" type="Spatial" parent="banuti"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.818998, 1.2, 2.51127 )
+
+[node name="coin" parent="banuti/holder9" instance=ExtResource( 11 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+
+[node name="holder10" type="Spatial" parent="banuti"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -6.88678, 1.2, 0.902654 )
+
+[node name="coin" parent="banuti/holder10" instance=ExtResource( 11 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+
+[node name="butonlevel2" parent="." instance=ExtResource( 12 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -9.16429, 1.02391, 5.09241 )
+script = ExtResource( 13 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="muzica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -30.0
+autoplay = true
+
+[node name="meniu-joc" parent="." instance=ExtResource( 15 )]
+
+[connection signal="body_entered" from="banuti/holder/coin" to="banuti" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="banuti/holder/coin" to="banuti/holder/coin" method="_on_coin_body_entered"]
+[connection signal="colectare" from="banuti/holder/coin" to="Control/numaratoru" method="_on_coin_colectare"]
+[connection signal="body_entered" from="banuti/holder2/coin" to="banuti" method="_on_coin2_body_entered"]
+[connection signal="body_entered" from="banuti/holder2/coin" to="banuti/holder2/coin" method="_on_coin_body_entered"]
+[connection signal="colectare" from="banuti/holder2/coin" to="Control/numaratoru" method="_on_coin_colectare"]
+[connection signal="body_entered" from="banuti/holder3/coin" to="banuti" method="_on_coin3_body_entered"]
+[connection signal="body_entered" from="banuti/holder3/coin" to="banuti/holder3/coin" method="_on_coin_body_entered"]
+[connection signal="colectare" from="banuti/holder3/coin" to="Control/numaratoru" method="_on_coin_colectare"]
+[connection signal="body_entered" from="banuti/holder4/coin" to="banuti" method="_on_coin4_body_entered"]
+[connection signal="body_entered" from="banuti/holder4/coin" to="banuti/holder4/coin" method="_on_coin_body_entered"]
+[connection signal="colectare" from="banuti/holder4/coin" to="Control/numaratoru" method="_on_coin_colectare"]
+[connection signal="body_entered" from="banuti/holder5/coin" to="banuti" method="_on_coin5_body_entered"]
+[connection signal="body_entered" from="banuti/holder5/coin" to="banuti/holder5/coin" method="_on_coin_body_entered"]
+[connection signal="colectare" from="banuti/holder5/coin" to="Control/numaratoru" method="_on_coin_colectare"]
+[connection signal="body_entered" from="banuti/holder6/coin" to="banuti" method="_on_coin6_body_entered"]
+[connection signal="body_entered" from="banuti/holder6/coin" to="banuti/holder6/coin" method="_on_coin_body_entered"]
+[connection signal="colectare" from="banuti/holder6/coin" to="Control/numaratoru" method="_on_coin_colectare"]
+[connection signal="body_entered" from="banuti/holder7/coin" to="banuti" method="_on_coin7_body_entered"]
+[connection signal="body_entered" from="banuti/holder7/coin" to="banuti/holder7/coin" method="_on_coin_body_entered"]
+[connection signal="colectare" from="banuti/holder7/coin" to="Control/numaratoru" method="_on_coin_colectare"]
+[connection signal="body_entered" from="banuti/holder8/coin" to="banuti" method="_on_coin8_body_entered"]
+[connection signal="body_entered" from="banuti/holder8/coin" to="banuti/holder8/coin" method="_on_coin_body_entered"]
+[connection signal="colectare" from="banuti/holder8/coin" to="Control/numaratoru" method="_on_coin_colectare"]
+[connection signal="body_entered" from="banuti/holder9/coin" to="banuti" method="_on_coin9_body_entered"]
+[connection signal="body_entered" from="banuti/holder9/coin" to="banuti/holder9/coin" method="_on_coin_body_entered"]
+[connection signal="colectare" from="banuti/holder9/coin" to="Control/numaratoru" method="_on_coin_colectare"]
+[connection signal="body_entered" from="banuti/holder10/coin" to="banuti" method="_on_coin10_body_entered"]
+[connection signal="body_entered" from="banuti/holder10/coin" to="banuti/holder10/coin" method="_on_coin_body_entered"]
+[connection signal="colectare" from="banuti/holder10/coin" to="Control/numaratoru" method="_on_coin_colectare"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="finished" from="muzica" to="." method="_on_muzica_finished"]

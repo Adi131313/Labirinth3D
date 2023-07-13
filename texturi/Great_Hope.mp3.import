@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Great_Hope.mp3-cf1419ece9d3bf6b5f47a4dd7243b09b.mp3str"
+
+[deps]
+
+source_file="res://texturi/Great_Hope.mp3"
+dest_files=[ "res://.import/Great_Hope.mp3-cf1419ece9d3bf6b5f47a4dd7243b09b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,156 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Final-level-1.gd" type="Script" id=1]
+[ext_resource path="res://fonturi/fundal1.jpg" type="Texture" id=2]
+[ext_resource path="res://fonturi/Acme-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://texturi/Button-SoundBible.com-1420500901.wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 80
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 65
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fundal1" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+texture = ExtResource( 2 )
+
+[node name="titlu" type="Label" parent="."]
+margin_left = 774.0
+margin_top = 68.0
+margin_right = 1126.0
+margin_bottom = 170.0
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+
+[node name="time" type="Label" parent="."]
+margin_left = 428.155
+margin_top = 263.088
+margin_right = 615.155
+margin_bottom = 365.088
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Time :"
+align = 1
+valign = 1
+
+[node name="minute" type="Label" parent="time"]
+margin_left = 300.128
+margin_top = 6.77225
+margin_right = 336.128
+margin_bottom = 108.772
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "e"
+align = 1
+valign = 1
+
+[node name="minute2" type="Label" parent="time"]
+margin_left = 244.88
+margin_top = 6.77225
+margin_right = 280.88
+margin_bottom = 108.772
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="puncte" type="Label" parent="time"]
+margin_left = 349.238
+margin_top = 5.54449
+margin_right = 385.238
+margin_bottom = 107.544
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+custom_fonts/font = SubResource( 2 )
+text = ":"
+align = 1
+valign = 1
+
+[node name="secunde" type="Label" parent="time"]
+margin_left = 449.932
+margin_top = 4.17807
+margin_right = 485.932
+margin_bottom = 106.178
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "e"
+align = 1
+valign = 1
+
+[node name="secunde2" type="Label" parent="time"]
+margin_left = 393.456
+margin_top = 7.8613
+margin_right = 429.456
+margin_bottom = 109.861
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="next" type="Button" parent="."]
+margin_left = 1529.11
+margin_top = 850.0
+margin_right = 1799.11
+margin_bottom = 959.0
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+custom_fonts/font = SubResource( 3 )
+action_mode = 0
+text = "Next level"
+flat = true
+
+[node name="restart" type="Button" parent="."]
+margin_left = 115.876
+margin_top = 850.0
+margin_right = 385.876
+margin_bottom = 959.0
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+custom_fonts/font = SubResource( 3 )
+action_mode = 0
+text = "Restart"
+flat = true
+
+[node name="Select" type="Button" parent="."]
+margin_left = 800.0
+margin_top = 850.0
+margin_right = 1109.0
+margin_bottom = 959.0
+custom_colors/font_color = Color( 0.898039, 0.701961, 0.0392157, 1 )
+custom_fonts/font = SubResource( 3 )
+action_mode = 0
+text = "Select Level"
+flat = true
+
+[node name="sunet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -30.0
+
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Select" to="." method="_on_Select_pressed"]
